@@ -1,0 +1,147 @@
+<!--pages/home/home.wxml-->
+<view class='text-center headerback'>
+  <image src='{{uploadpath}}inst/{{logobackimg}}' mode='aspectFill'></image>
+</view>
+<view class='headerlogo'>
+  <view class='flex-row ' style='padding:40rpx;'>
+    <view class='logoborder'>
+      <image class='logo' src='{{uploadpath}}inst/{{logo}}'></image>
+    </view>
+    <view style='margin-left:20rpx;' class='flex-1'>
+      <view class='txt-white h5'>
+        {{name}}
+      </view>
+      <view class='flex-row flex-center flex-1 margin-top-10'>
+        <view class='flex-1'>
+          <view class='h6 txt-light '>电话：{{tel}}</view>
+          <view class='h6 txt-light '>{{address}}</view>
+        </view>
+        <view>
+          <image class='info-icon' src='{{uploadpath}}resource/location-white.png' bindtap='openMap' id="{{address}}"></image>
+        </view>
+        <view class='txt-white h6' style='margin-left:20rpx;margin-right:20rpx;'>|</view>
+        <view>
+          <image class='info-icon' src='{{uploadpath}}resource/phone-white.png' bindtap='phoneCall' id="{{tel}}" ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='margin-top white-block'>
+  <view class='flex-row tabs'>
+    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
+      <view class='flex-1'></view>
+      <view class='txt-light tabtext  {{currenttab==0?"active":""}}'>待处理 {{list_2.length}}</view>
+      <view class='flex-1'></view>
+    </view>
+    <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="1">
+      <view class='flex-1'></view>
+      <view class='txt-light tabtext {{currenttab==1?"active":""}}'>询价中 {{list_1.length}}</view>
+      <view class='flex-1'></view>
+    </view>
+  </view>
+
+
+
+  <view class='padding-20' wx:if="{{currenttab==0}}">
+    <block wx:if="{{list_2.length==0}}"> 
+    <view class='h6 txt-gray'>暂无未处理的订单</view>
+    
+    </block>
+    <!-- <block wx:if="{{list_2.length>0}}"> 
+    <view class='flex-row margin-top-10' >
+      <view class='h6 flex-1 txt-gray'>行程</view>
+      <view class='h6 flex-1 txt-gray'>货品</view>
+      <view class='h6 txt-gray flex-1'>报价</view>
+      <view  class='h6 txt-white'>详情</view>
+    </view>
+    <view class='flex-row margin-top-10' wx:for="{{list_2}}" wx:key="key">
+      <view class='h6 flex-1'>{{item.routestr}}</view>
+      <view class='h6 flex-1'>{{item.goodsstr}}</view>
+      <view class='h6 flex-1 txt-primary'>{{item.quoteamount}}元</view>
+      <navigator url='/pages/quoteferrydetail/quoteferrydetail?id={{item.id}}' class='h6 txt-primary'>处理</navigator>
+    </view>
+    </block> -->
+  </view>
+  <view class='padding-20' wx:if="{{currenttab==1}}">
+    <block wx:if="{{list_1.length==0}}"> 
+    <view class='h6 txt-gray'>暂无等待报价的订单</view>
+    </block>
+    <!-- <block wx:if="{{list_1.length>0}}"> 
+    <view class='flex-row margin-top-10' >
+      <view class='h6 flex-1 txt-gray'>行程</view>
+      <view class='h6 flex-1 txt-gray'>货品</view>
+      <view  class='h6 txt-white'>详情</view>
+    </view>
+    <view class='flex-row margin-top-10' wx:for="{{list_1}}" wx:key="key">
+      <view class='h6 flex-1'>{{item.routestr}}</view>
+      <view class='h6 flex-1'>{{item.goodsstr}}</view>
+      <navigator url='/pages/quoteferry/quoteferry?id={{item.id}}' class='h6 txt-primary'>详情</navigator>
+    </view>
+    </block> -->
+  </view>
+
+  <view class='padding-40'>
+    <button type='primary' bindtap='gotoFerryQuote'>获取报价</button>
+  </view>
+
+</view>
+
+
+
+<view class='margin-top padding-20 white-block' wx:if="{{poster!=''}}">
+  <image src='{{uploadpath}}inst/{{poster}}' style='width:100%' mode='widthFix'></image>
+</view>
+
+<view class='padding-40 white-block margin-top'>
+  <view class='h4 txt-bold'>货运保障</view>
+  <view class='flex-row flex-wrap margin-top-10'>
+    <view class='baozhangitem'>
+      <view class='text-center'>
+        <image src='{{uploadpath}}resource/anxin.png'></image>
+      </view>
+      <view class='text-center h6'>
+        无事故，无火烧，无水泡
+      </view>
+    </view>
+    <view class='baozhangitem'>
+      <view class='text-center'>
+        <image src='{{uploadpath}}resource/jiance.png'></image>
+      </view>
+      <view class='text-center h6'>
+        专业检测车队，还原真实车况
+      </view>
+    </view>
+    <view class='baozhangitem'>
+      <view class='text-center'>
+        <image src='{{uploadpath}}resource/baozheng.png'></image>
+      </view>
+      <view class='text-center h6'>
+        全程保障，无忧购车
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class='padding-40 white-block margin-top'>
+  <view class='h4 txt-bold'>特色服务</view>
+  <view class='flex-row flex-wrap margin-top-10'>
+    <navigator  class='baozhangitem flex-row flex-center' wx:for="{{servicelist}}" wx:key="k">
+      <view>
+        <icon size='12' type='success'></icon>
+      </view>
+      <view class='h6' style='margin-left:10rpx;'>
+        {{item.name}}
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view wx:if="{{instinfo.level!=3}}" class='inbottomla txt-gray h6'>
+  云易创提供技术支持
+</view>

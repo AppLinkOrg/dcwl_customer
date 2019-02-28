@@ -1,0 +1,110 @@
+<view class='flex-row flex-center top_title'>
+  <view class='catitem flex-1 bg-white flex-row flex-column padding-30' wx:key="k" bindtap='bindcontact'>
+    <view class=' text-center  txt-gray {{ctt==1?"to-white":"" }} top   txt-bold' bindtap='bindcontact'>待取货</view>
+    <view style='height:4rpx;width:120rpx;' class="{{ctt==1?'bg-primary':''}}"></view>
+  </view>
+
+  <view class='catitem flex-1 bg-white flex-row flex-column padding-30' wx:key="k" bindtap='bindwaitcompleted'>
+    <view class=' text-center  txt-gray {{ctt==2?"to-white":""}} top   txt-bold' bindtap='bindwaitcompleted'>运输中</view>
+    <view style='height:4rpx;width:120rpx;' class="{{ctt==2?'bg-primary':''}}"></view>
+  </view>
+
+  <view class='catitem flex-1 bg-white flex-row flex-column padding-30' wx:key="k" bindtap='bindcompleted'>
+    <view class=' text-center  txt-gray {{ctt==3?"to-white":""}} top   txt-bold' bindtap='bindcompleted'>已完成</view>
+    <view style='height:4rpx;width:120rpx;' class="{{ctt==3?'bg-primary':''}}"></view>
+  </view>
+
+</view>
+
+<view class="flex-row margin-top-20" wx:if="{{ctt==1}}">
+  <view class="flex-1"></view>
+  <view class=''>
+    <navigator class='content margin-20 ' url='../logisticsDetails/logisticsDetails' wx:for='{{3}}'>
+      <view class='flex-row padding-top-20'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
+        </view>
+      </view>
+      <view class='flex-row'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>
+        </view>
+      </view>
+
+      <view class='time flex-row flex-center margin-top-20 '>
+        <view class="text-center flex-1" style='width:100%;color: #000;'>要求取货时间： 2019-02-27 13:20</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="flex-1"></view>
+</view>
+
+<view class="flex-row margin-top-20" wx:if="{{ctt==2}}">
+  <view class="flex-1"></view>
+  <view class=''>
+    <navigator class='content margin-20 ' url='../transportDetails/transportDetails' wx:for='{{2}}'>
+      <view class='flex-row padding-top-20'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
+        </view>
+      </view>
+      <view class='flex-row'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>
+        </view>
+      </view>
+
+      <view class='flex-row'>
+        <view class='margin-left'>
+          <view class='margin-10 txt-black f-32 flex-row height-50'>
+            <view class='txt-black f-32' style='width: 230rpx;'>车牌号：</view> 粤A452687</view>
+          <view class='margin-10 txt-black f-32 flex-row height-50'>
+            <view class='txt-black f-32' style='width: 230rpx;'>接单时间：</view>2019-02-05 14:00</view>
+        </view>
+      </view>
+
+      <view class='time flex-row flex-center margin-top-20 '>
+        <view class="text-center flex-1" style='width:100%;color: #000;'>取货时间： 2019-2-27 15:00</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="flex-1"></view>
+</view>
+
+<view class="flex-row margin-top-20" wx:if="{{ctt==3}}">
+  <view class="flex-1"></view>
+  <view class=''>
+    <navigator class='content margin-20 ' url='../transportDetails/transportDetails?ctt=3' wx:for='{{3}}'>
+      <view class='flex-row padding-left-40 height-70 flex-center'>
+        <view class='f-32 txt-black'>运单号：1234567890</view>
+      </view>
+      <view class='flex-row padding-top-20'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
+        </view>
+      </view>
+      <view class='flex-row'>
+        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>
+        </view>
+      </view>
+
+
+
+
+    </navigator>
+  </view>
+  <view class="flex-1"></view>
+</view>

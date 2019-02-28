@@ -1,0 +1,63 @@
+<view class="flex-row">
+
+  <view class=''>
+    <view class='content margin-top padding-20 margin-bottom-20' url='../details/details' wx:for='{{3}}'>
+      <view class='f-36 padding-left-40 txt-bold'>2月26日</view>
+      <view class='flex-row padding-left-40 height-70 flex-center'>
+        <view class='f-32 txt-black'>运单号：1234567890</view>
+      </view>
+       <view class='flex-row padding-left-40 height-70 flex-center'>
+        <view class='f-32 txt-black'>运输时间：2019-05-06  14:00</view>
+      </view>
+      <view class='flex-row padding-top-20'>
+        <image src='' class='icon-20 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-32 txt-black'>装货地址：水电费离开加上了科技发达杀了快递费</view>
+        </view>
+      </view>
+
+      <view class='flex-row'>
+        <image src='' class='icon-20 margin-10 margin-left'></image>
+        <view>
+          <view class='margin-10 f-32 txt-black'>卸货地址：水电费离开加上了科技发达杀了快递费</view>
+        </view>
+      </view>
+
+      <view class='flex-row'>
+        <image src='' class='icon-30 margin-10 margin-left'></image>
+        <view class='flex-row'>
+          <view class='margin-10 f-32 txt-black' style='width: 230rpx;'>货物：钢筋</view>
+          <view class='margin-10 f-32 txt-black'>重量：120吨</view>
+        </view>
+      </view>
+
+      <view class='flex-row'>
+        <image src='' class='icon-30 margin-10 margin-left'></image>
+
+        <view class='margin-10 f-32 txt-black'>司机：张三</view>
+
+      </view>
+
+      <view class='flex-row'>
+        <image src='' class='icon-30 margin-10 margin-left'></image>
+
+        <view class='margin-10 f-32 txt-black'>身份证号码：545892336658996</view>
+
+      </view>
+
+      <view class='flex-row'>
+        <image src='' class='icon-30 margin-10 margin-left'></image>
+
+        <view class='margin-10 f-32 txt-black'>车牌：粤BA234356</view>
+
+      </view>
+
+      <view class='flex-row'>
+        <view class='margin-10 f-32 txt-black'>总费用：6666元</view>
+
+      </view>
+
+    </view>
+  </view>
+
+</view>

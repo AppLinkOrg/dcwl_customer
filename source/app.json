@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/auth/auth",
+    "pages/login/login",
+    "pages/logistics/logistics",
+    "pages/logisticsDetails/logisticsDetails",
+    "pages/handleOrder/handleOrder",
+    "pages/my/my",
+    "pages/orderList/orderList",
+    "pages/quoteferry/quoteferry",
+    "pages/route/route",
+    "pages/addressselect/addressselect",
+    "pages/goodsselect/goodsselect",
+    "pages/transportDetails/transportDetails"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#E51C23",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#4C556E",
+    "borderStyle": "black",
+    "backgroundColor": "#E51C23",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "text": "物流跟踪",
+        "pagePath": "pages/logistics/logistics"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  }
+}
