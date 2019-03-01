@@ -41,6 +41,15 @@ class Content extends AppBase {
   }
   changeTab(e) {
     console.log(e);
+    if (e.currentTarget.id==0){
+      wx.navigateTo({
+        url: '../handleOrder/handleOrder',
+      })
+    }else{
+      wx.navigateTo({
+        url: '../inquiryPrice/inquiryPrice',
+      })
+    }
     this.Base.setMyData({ currenttab: e.currentTarget.id });
   }
   gotoFerryQuote() {

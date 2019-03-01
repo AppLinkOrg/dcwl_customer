@@ -1,4 +1,4 @@
-<!--pages/handleOrder/handleOrder.wxml-->
+<!--pages/inquiryPrice/inquiryPrice.wxml-->
 <view class="flex-row margin-top-20">
   <view class="flex-1"></view>
   <view class=''>
@@ -20,20 +20,13 @@
             <view class='txt-black f-32' style='width: 180rpx;'>载重：</view>50吨</view>
         </view>
       </view>
-      <view class=' txt-black f-32 flex-row height-70 offer flex-center'>
-        <view class='txt-black f-32 margin-left' style='width: 180rpx;'>报价：</view>5550元</view>
+      
         
       <view class='height-150 flex-row'>
         <view class="flex-1"></view>
         <view class='flex-center flex-row '>
           <view class="flex-1"></view>
-          <button class='bg-blue txt-white text-center margin-20 f-32' form-type='submit' style='width: 200rpx;'>确认订单</button>
-          <view class="flex-1"></view>
-        </view>
-        <view class="flex-1"></view>
-        <view class='flex-center flex-row '>
-          <view class="flex-1"></view>
-          <button class='bg-red txt-white text-center margin-20 f-32' form-type='submit' style='width: 200rpx;'>取消订单</button>
+          <button class='bg-blue txt-white text-center margin-20 f-32' form-type='submit' style='width: 200rpx;'>取消询价</button>
           <view class="flex-1"></view>
         </view>
         <view class="flex-1"></view>

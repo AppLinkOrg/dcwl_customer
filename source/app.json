@@ -6,6 +6,7 @@
     "pages/logistics/logistics",
     "pages/logisticsDetails/logisticsDetails",
     "pages/handleOrder/handleOrder",
+    "pages/inquiryPrice/inquiryPrice",
     "pages/my/my",
     "pages/orderList/orderList",
     "pages/quoteferry/quoteferry",
@@ -33,15 +34,21 @@
     "list": [
       {
         "text": "首页",
-        "pagePath": "pages/home/home"
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/home-white.png",
+        "selectedIconPath": "images/icons/home-blue.png"
       },
       {
         "text": "物流跟踪",
-        "pagePath": "pages/logistics/logistics"
+        "pagePath": "pages/logistics/logistics",
+        "iconPath": "images/icons/truck.png",
+        "selectedIconPath": "images/icons/truck-blue.png"
       },
       {
         "text": "个人中心",
-        "pagePath": "pages/my/my"
+        "pagePath": "pages/my/my",
+        "iconPath": "images/icons/personal.png",
+        "selectedIconPath": "images/icons/personal-blue.png"
       }
     ]
   }

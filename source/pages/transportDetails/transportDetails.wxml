@@ -8,7 +8,7 @@
     <view class='content  '>
 
       <view class='flex-row padding-top-20'>
-        <image src='/images/icons/a-a.png' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
@@ -17,7 +17,7 @@
       </view>
 
       <view class='flex-row'>
-        <image src='/images/icons/a-a.png' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>

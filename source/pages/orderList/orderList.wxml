@@ -10,21 +10,21 @@
         <view class='f-32 txt-black'>运输时间：2019-05-06  14:00</view>
       </view>
       <view class='flex-row padding-top-20'>
-        <image src='' class='icon-20 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/dot.png' class='icon-20 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-32 txt-black'>装货地址：水电费离开加上了科技发达杀了快递费</view>
         </view>
       </view>
 
       <view class='flex-row'>
-        <image src='' class='icon-20 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/dot-yellow.png' class='icon-20 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-32 txt-black'>卸货地址：水电费离开加上了科技发达杀了快递费</view>
         </view>
       </view>
 
       <view class='flex-row'>
-        <image src='' class='icon-30 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/cargo.png' class='icon-30 margin-10 margin-left'></image>
         <view class='flex-row'>
           <view class='margin-10 f-32 txt-black' style='width: 230rpx;'>货物：钢筋</view>
           <view class='margin-10 f-32 txt-black'>重量：120吨</view>
@@ -32,28 +32,28 @@
       </view>
 
       <view class='flex-row'>
-        <image src='' class='icon-30 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/driver.png' class='icon-30 margin-10 margin-left'></image>
 
         <view class='margin-10 f-32 txt-black'>司机：张三</view>
 
       </view>
 
       <view class='flex-row'>
-        <image src='' class='icon-30 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/id-card.png' class='icon-30 margin-10 margin-left'></image>
 
         <view class='margin-10 f-32 txt-black'>身份证号码：545892336658996</view>
 
       </view>
 
       <view class='flex-row'>
-        <image src='' class='icon-30 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/palte.png' class='icon-30 margin-10 margin-left'></image>
 
         <view class='margin-10 f-32 txt-black'>车牌：粤BA234356</view>
 
       </view>
 
       <view class='flex-row'>
-        <view class='margin-10 f-32 txt-black'>总费用：6666元</view>
+        <view class='margin-10 f-32 txt-black txt-bold'>总费用：6666元</view>
 
       </view>
 

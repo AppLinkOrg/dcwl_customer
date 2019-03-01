@@ -21,14 +21,14 @@
   <view class=''>
     <navigator class='content margin-20 ' url='../logisticsDetails/logisticsDetails' wx:for='{{3}}'>
       <view class='flex-row padding-top-20'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
         </view>
       </view>
       <view class='flex-row'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>
@@ -48,14 +48,14 @@
   <view class=''>
     <navigator class='content margin-20 ' url='../transportDetails/transportDetails' wx:for='{{2}}'>
       <view class='flex-row padding-top-20'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
         </view>
       </view>
       <view class='flex-row'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>
@@ -87,14 +87,14 @@
         <view class='f-32 txt-black'>运单号：1234567890</view>
       </view>
       <view class='flex-row padding-top-20'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>信通大夏</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>信通大夏</view>
         </view>
       </view>
       <view class='flex-row'>
-        <image src='' class='icon-40 margin-10 margin-left'></image>
+        <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>和平里东街13号</view>
           <view class='margin-10 flex-1' style='color: #858A96;'>东街8号1号楼</view>

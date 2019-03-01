@@ -539,6 +539,14 @@ button[disabled][type=primary] {
   font-size: 36rpx !important;
 }
 
+.txt-black {
+  color: black;
+}
+
+.txt-white {
+  color: white;
+}
+
 .padding-left-15 {
   padding-left: 15rpx;
 }
