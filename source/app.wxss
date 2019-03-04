@@ -583,6 +583,10 @@ button[disabled][type=primary] {
   height: 150rpx;
 }
 
+.padding-10 {
+  padding: 10rpx;
+}
+
 .padding-20 {
   padding: 20rpx;
 }
@@ -647,6 +651,17 @@ button[disabled][type=primary] {
   margin-top: 40rpx;
 }
 
+.margin-top-80 {
+  margin-top: 80rpx;
+}
+.margin-top-100 {
+  margin-top: 100rpx;
+}
+
+.margin-left-20 {
+  margin-left: 20rpx;
+}
+
 .margin-bottom-20 {
   margin-bottom: 20rpx;
 }
@@ -671,4 +686,9 @@ button[disabled][type=primary] {
 
 .bg-red {
   background: #f25c5b;
+}
+
+.column {
+  align-content: center;
+  flex-direction: column;
 }

@@ -50,8 +50,6 @@ class Content extends AppBase {
       }
     }
 
-
-
   }
   phonenoCallback(mobile,e){
     this.Base.setMyData({ mobile: mobile });
@@ -93,6 +91,12 @@ class Content extends AppBase {
       })
     }
   }
+
+  changeDate(e){
+    console.log(e);
+    this.Base.setMyData({ date: e.detail.value });
+  }
+
   confirmQuote(e) {
     //console.log(e);
     //return;
@@ -104,6 +108,10 @@ class Content extends AppBase {
     }
     if(data.route==undefined){
       this.Base.info("请选择路线");
+      return;
+    }
+    if (data.date == undefined) {
+      this.Base.info("请选取货时间");
       return;
     }
     if (data.goods == undefined) {
@@ -119,6 +127,7 @@ class Content extends AppBase {
       route: JSON.stringify(data.route),
       distance: data.distance,
       duration: data.duration,
+      pickupgoods_time: data.date,
       goods: JSON.stringify(data.goods),
       weight: data.weight,
       remark: data.remark,
@@ -156,4 +165,5 @@ body.openGoods = content.openGoods;
 body.confirmQuote = content.confirmQuote;
 body.remarkChange = content.remarkChange;
 body.realnameChange = content.realnameChange;
+body.changeDate = content.changeDate;
 Page(body)

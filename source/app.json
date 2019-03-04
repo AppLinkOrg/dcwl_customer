@@ -13,7 +13,8 @@
     "pages/route/route",
     "pages/addressselect/addressselect",
     "pages/goodsselect/goodsselect",
-    "pages/transportDetails/transportDetails"
+    "pages/transportDetails/transportDetails",
+    "pages/success/success"
   ],
   "permission": {
     "scope.userLocation": {

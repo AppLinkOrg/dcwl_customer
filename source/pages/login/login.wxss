@@ -7,25 +7,7 @@
   width: 238rpx;
   height: 238rpx
 }
-/*.content{
-  width: 100%;
-  color: #000;
-  justify-content: center;
-}
-.title{
-  width: 582rpx;
-  font-weight: bold;
-}
-.login{
-  width: 582rpx;
-  height: 70rpx;
-  background: #E51C23;
-  border-radius: 10rpx;
-  justify-content: center;
-  align-items: center;
-} */
 
-/* pages/login/login.wxss */
 .LOGO{
   height: 300rpx;
   width: 220rpx;
@@ -35,7 +17,7 @@
   color: #7A5D20;
 }
 .btn{
-  width: 130rpx;
+  /* width: 130rpx; */
   height: 60rpx;
   line-height: 60rpx;
   border: 1rpx solid #E51C23;

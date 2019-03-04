@@ -1,39 +1,39 @@
 <!--pages/handleOrder/handleOrder.wxml-->
-<view class="flex-row margin-top-20">
+<view class="flex-row margin-top-20" >
   <view class="flex-1"></view>
   <view class=''>
-    <view class='content margin-20 ' wx:for='{{2}}'>
+    <view class='content margin-20 ' wx:for='{{list_2}}'>
       <view class='flex-row padding-top-20 margin-left height-70'>
-        <view class='margin-10 f-36 flex-1' style='color: #000;'>取货地点：深圳市城西路22号</view>
+        <view class='margin-10 f-36 flex-1' style='color: #000;'>取货地点：{{item.routestr}}</view>
       </view>
       <view class='flex-row margin-left height-70'>
-        <view class='margin-10 f-36 flex-1' style='color: #000;'>取货地点：深圳市城西路22号</view>
+        <view class='margin-10 f-36 flex-1' style='color: #000;'>到货地点：{{item.routestr}}</view>
       </view>
 
       <view class='flex-row'>
         <view class='margin-left'>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
-            <view class='txt-black f-32' style='width: 180rpx;'>路程：</view> 150km</view>
+            <view class='txt-black f-32' style='width: 180rpx;'>路程：</view>{{item.distance}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
-            <view class='txt-black f-32' style='width: 180rpx;'>货物：</view>钢筋</view>
+            <view class='txt-black f-32' style='width: 180rpx;'>货物：</view>{{item.goodsstr}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
-            <view class='txt-black f-32' style='width: 180rpx;'>载重：</view>50吨</view>
+            <view class='txt-black f-32' style='width: 180rpx;'>载重：</view>{{item.weight}}</view>
         </view>
       </view>
       <view class=' txt-black f-32 flex-row height-70 offer flex-center'>
-        <view class='txt-black f-32 margin-left' style='width: 180rpx;'>报价：</view>5550元</view>
+        <view class='txt-black f-32 margin-left' style='width: 180rpx;'>报价：</view>{{item.quoteamount}}元</view>
         
       <view class='height-150 flex-row'>
         <view class="flex-1"></view>
         <view class='flex-center flex-row '>
           <view class="flex-1"></view>
-          <button class='bg-blue txt-white text-center margin-20 f-32' form-type='submit' style='width: 200rpx;'>确认订单</button>
+          <button class='bg-blue txt-white text-center margin-20 f-32' bindtap='confirmOrder' id='{{item.id}}' style='width: 200rpx;'>确认订单</button>
           <view class="flex-1"></view>
         </view>
         <view class="flex-1"></view>
         <view class='flex-center flex-row '>
           <view class="flex-1"></view>
-          <button class='bg-red txt-white text-center margin-20 f-32' form-type='submit' style='width: 200rpx;'>取消订单</button>
+          <button class='bg-red txt-white text-center margin-20 f-32' bindtap='cancelOrder' id='{{item.id}}' style='width: 200rpx;'>取消订单</button>
           <view class="flex-1"></view>
         </view>
         <view class="flex-1"></view>
