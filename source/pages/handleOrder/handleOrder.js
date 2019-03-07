@@ -31,9 +31,7 @@ class Content extends AppBase {
         indexbanner: indexbanner
       });
     });
-    instapi.info({}, (info) => {
-      that.Base.setMyData(info);
-    });
+   
     instapi.servicelist({}, (servicelist) => {
       that.Base.setMyData({
         servicelist: servicelist
@@ -51,7 +49,7 @@ class Content extends AppBase {
   }
 
   confirmOrder(e){
-    //console.log(e)
+    // console.log(e)
     var that = this;
     wx.showModal({
       content: '请确认订单信息',
@@ -61,7 +59,7 @@ class Content extends AppBase {
           quoteferryapi.confirm({
             id: e.target.id
           }, (ret) => {
-            //console.log(ret)
+            console.log(ret)
             that.onMyShow();
           });
         } else if (res.cancel) {

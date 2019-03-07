@@ -41,21 +41,74 @@ class Content extends AppBase {
   }
   changeTab(e) {
     console.log(e);
-    if (e.currentTarget.id==0){
-      wx.navigateTo({
-        url: '../handleOrder/handleOrder',
-      })
-    }else{
-      wx.navigateTo({
-        url: '../inquiryPrice/inquiryPrice',
-      })
-    }
+   
     this.Base.setMyData({ currenttab: e.currentTarget.id });
   }
   gotoFerryQuote() {
     wx.navigateTo({
       url: '/pages/quoteferry/quoteferry',
     })
+  }
+
+  confirmOrder(e) {
+    // console.log(e)
+    var that = this;
+    wx.showModal({
+      content: '请确认订单信息',
+      success(res) {
+        if (res.confirm) {
+          var quoteferryapi = new QuoteferryApi();
+          quoteferryapi.confirm({
+            id: e.target.id
+          }, (ret) => {
+            console.log(ret)
+            that.onMyShow();
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  }
+
+  cancelOrder(e) {
+    //console.log(e)
+    wx.showModal({
+      content: '是否取消订单',
+      success(res) {
+        if (res.confirm) {
+          var quoteferryapi = new QuoteferryApi();
+          quoteferryapi.abandon({
+            id: e.target.id
+          }, (ret) => {
+            //console.log(ret)
+            this.onMyShow();
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+  }
+
+  cancelOrder1(e) {
+    //console.log(e)
+    wx.showModal({
+      content: '是否取消询价',
+      success(res) {
+        if (res.confirm) {
+          var quoteferryapi = new QuoteferryApi();
+          quoteferryapi.abandon({ id: e.target.id }, (ret) => {
+            //console.log(ret)
+            this.onMyShow();
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
   }
 }
 var content = new Content();
@@ -69,5 +122,8 @@ body.switchBrand = content.switchBrand;
 body.switchPrice = content.switchPrice;
 body.switchSize = content.switchSize;
 body.gotoFerryQuote = content.gotoFerryQuote;
+body.cancelOrder = content.cancelOrder;
+body.cancelOrder1 = content.cancelOrder1;
+body.confirmOrder = content.confirmOrder;
 
 Page(body)

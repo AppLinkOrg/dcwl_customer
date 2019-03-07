@@ -1,0 +1,5 @@
+<!--pages/usageRecord/usageRecord.wxml-->
+<view class='white-block block' style='margin-top:40rpx;' wx:for="{{list}}">
+  <navigator url='../quoteferry/quoteferry?inst_id={{item.id}}' class='item item-split txt-black' >{{item.name}}</navigator>
+
+</view>
