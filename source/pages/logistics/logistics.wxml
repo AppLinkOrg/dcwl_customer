@@ -24,19 +24,19 @@
         <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.start_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.start_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.s_address_details}}</view>
         </view>
       </view>
       <view class='flex-row'>
         <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.end_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.end_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.e_address_details}}</view>
         </view>
       </view>
 
       <view class='time flex-row flex-center margin-top-20 '>
-        <view class="text-center flex-1" style='width:100%;color: #000;'>要求取货时间： {{item.pickupgoods_time}}</view>
+        <view class="text-center flex-1" style='width:100%;color: #000;'>要求取货时间： {{item.user_pickupgoods_time}}</view>
       </view>
     </navigator>
   </view>
@@ -51,14 +51,14 @@
         <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
            <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.start_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.start_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.s_address_details}}</view>
         </view>
       </view>
       <view class='flex-row'>
         <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.end_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.end_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.e_address_details}}</view>
         </view>
       </view>
 
@@ -90,14 +90,14 @@
         <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.start_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.start_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.s_address_details}}</view>
         </view>
       </view>
       <view class='flex-row'>
         <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{item.end_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.end_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{item.e_address_details}}</view>
         </view>
       </view>
 

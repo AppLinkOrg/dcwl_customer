@@ -18,7 +18,7 @@ class Content extends AppBase {
     var aftermonth = tomorrow + 30*24 * 60 * 60 * 1000;
     var startdate = this.Base.util.FormatDate(new Date(tomorrow));
     var enddate = this.Base.util.FormatDate(new Date(aftermonth));
-    this.Base.setMyData({ mobile: "", realname:"",remark:"", startdate: startdate, enddate: enddate });
+    this.Base.setMyData({ mobile: "", realname: "", remark: "", startdate: startdate, enddate: enddate, inst_id: options.inst_id });
   }
   onMyShow() {
     var that = this;
@@ -82,7 +82,7 @@ class Content extends AppBase {
     var goods = this.Base.getMyData().goods;
     if (goods != undefined) {
       wx.navigateTo({
-        url: '/pages/goodsselect/goodsselect?callbackid=route&goods=' + JSON.stringify(goods),
+        url: '/pages/goodsselect/goodsselect?callbackid=route&inst_id='+this.Base.getMyData().inst_id+'&goods=' + JSON.stringify(goods),
       })
     } else {
 
@@ -133,7 +133,8 @@ class Content extends AppBase {
       remark: data.remark,
       mobile: data.mobile,
       realname: data.realname,
-      formid:e.detail.formId
+      formid:e.detail.formId,
+      inst_ids: this.Base.getMyData().inst_id
     };
     if(this.Base.options.id!=undefined
     &&this.Base.options.action!="copy"){

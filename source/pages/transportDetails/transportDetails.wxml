@@ -1,6 +1,6 @@
 <view class=' bg-white height-100 padding-left-40 flex-center flex-row '>
-  
-  <view class='f-36 txt-black txt-bold' >订单详情</view>
+
+  <view class='f-36 txt-black txt-bold'>订单详情</view>
 </view>
 <view class="flex-row margin-top-20">
   <view class="flex-1"></view>
@@ -11,7 +11,7 @@
         <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{info.start_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.start_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.s_address_details}}</view>
         </view>
 
       </view>
@@ -20,7 +20,7 @@
         <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
           <view class='margin-10 f-36 flex-1' style='color: #000;'>{{info.end_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.end_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.e_address_details}}</view>
         </view>
 
       </view>
@@ -28,9 +28,11 @@
       <view class='flex-row padding-bottom-30'>
         <view class='margin-left'>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
-            <view class='txt-black f-32' style='width: 180rpx;'>车牌号：</view>{{info.vehicle_id_name}}</view>
+            <view class='txt-black f-32' style='width: 180rpx;'>车牌号：</view>{{info.vehicle_plate_number}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
             <view class='txt-black f-32' style='width: 180rpx;'>司机：</view> {{info.driver_name}}</view>
+          <view class='margin-10 txt-black f-32 flex-row height-70'>
+            <view class='txt-black f-32' style='width: 180rpx;'>联系方式：</view> {{info.driver_mobile}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
             <view class='txt-black f-32' style='width: 180rpx;'>接单时间：</view>{{info.receipt_time}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>

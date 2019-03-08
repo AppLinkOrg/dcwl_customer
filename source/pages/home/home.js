@@ -3,6 +3,7 @@ import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
 import { QuoteferryApi } from "../../apis/quoteferry.api.js";
+import { MemberApi } from "../../apis/member.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -26,11 +27,16 @@ class Content extends AppBase {
     instapi.servicelist({}, (servicelist) => {
       that.Base.setMyData({ servicelist: servicelist });
     });
+
+    var memberApi = new MemberApi();
+    memberApi.info({},(ret)=>{
+      that.Base.setMyData({ mobile: ret.mobile });
+    })
     var quoteferryapi = new QuoteferryApi();
-    quoteferryapi.list({ status: 2 }, (ret) => {
+    quoteferryapi.list({ status: 2, mobile: that.Base.getMyData().mobile }, (ret) => {
       this.Base.setMyData({ list_2: ret });
     });
-    quoteferryapi.list({ status: 1 }, (ret) => {
+    quoteferryapi.list({ status: 1, mobile: that.Base.getMyData().mobile }, (ret) => {
       this.Base.setMyData({ list_1: ret });
     });
   }

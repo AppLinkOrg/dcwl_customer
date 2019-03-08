@@ -34,6 +34,11 @@ class Content extends AppBase {
       return;
     }
 
+    if (data.mobile == "") {
+      this.Base.info("请点击绑定手机号");
+      return;
+    }
+  
     var mobile = data.mobile;
     var name = data.name;
     var openid = AppBase.UserInfo.openid;
@@ -41,6 +46,10 @@ class Content extends AppBase {
     var api = new MemberApi();
     api.register({ mobile, name, openid, session_key }, (ret) => {
       console.log(ret)
+      var appBase = new AppBase();
+      appBase.checkPermission({ mobile},(ret)=>{
+
+      });
       if (ret.code == 0) {
         wx.reLaunch({
           url: '/pages/home/home',

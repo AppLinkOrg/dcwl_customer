@@ -15,14 +15,14 @@ class Content extends AppBase {
     if (options.goods == undefined) {
       this.Base.setMyData({ goods: [] });
     } else {
-      this.Base.setMyData({ goods: JSON.parse(options.goods) });
+      this.Base.setMyData({ goods: JSON.parse(options.goods), inst_id: options.inst_id });
     }
 
   }
   onMyShow() {
     var that = this;
     var goodsapi=new GoodsApi();
-    goodsapi.list({},(goodslist)=>{
+    goodsapi.list({ inst_id: this.Base.getMyData().inst_id},(goodslist)=>{
       this.Base.setMyData({ goodslist});
     });
     this.calc();

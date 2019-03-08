@@ -29,7 +29,7 @@
 </view>
 
 
-<view class='margin-top white-block'>
+<view class=' white-block'>
   <view class='flex-row tabs'>
     <view class='flex-1 tab  flex-row ' bindtap='changeTab' id="0">
       <view class='flex-1'></view>
@@ -109,10 +109,10 @@
         <view class=''>
           <view class='content margin-20' wx:key='item' wx:for='{{list_1}}'>
             <view class='flex-row padding-top-20 margin-left height-70'>
-              <view class='margin-10 f-32 flex-1' style='color: #000;'>取货地点：{{item.routestr}}</view>
+              <view class='margin-10 f-32 flex-1' style='color: #000;'>取货地点：{{item.start_address}}</view>
             </view>
             <view class='flex-row margin-left height-70'>
-              <view class='margin-10 f-32 flex-1' style='color: #000;'>到货地点：{{item.routestr}}</view>
+              <view class='margin-10 f-32 flex-1' style='color: #000;'>到货地点：{{item.end_address}}</view>
             </view>
 
             <view class='flex-row'>

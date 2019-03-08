@@ -24,11 +24,17 @@ class Content extends AppBase {
       that.Base.setMyData(info);
     });
 
-    var usagerecordApi = new UsagerecordApi();
-    usagerecordApi.list({}, (list) => {
-      console.log(list)
-      that.Base.setMyData({list});
-    });
+    var memberApi = new MemberApi(); 
+    memberApi.info({}, (ret) => {
+      // that.Base.setMyData({ mobile: ret.mobile });
+      var usagerecordApi = new UsagerecordApi();
+      usagerecordApi.list({ mobile: ret.mobile }, (list) => {
+        console.log(list)
+        that.Base.setMyData({ list });
+      });
+    })
+
+    
   
 
 
