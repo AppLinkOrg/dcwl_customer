@@ -18,13 +18,15 @@ class Content extends AppBase {
       this.Base.setMyData({ goods: JSON.parse(options.goods), inst_id: options.inst_id });
     }
 
+    var goodsapi = new GoodsApi();
+    goodsapi.list({ inst_id: options.inst_id }, (goodslist) => {
+      this.Base.setMyData({ goodslist });
+    });
+
   }
   onMyShow() {
     var that = this;
-    var goodsapi=new GoodsApi();
-    goodsapi.list({ inst_id: this.Base.getMyData().inst_id},(goodslist)=>{
-      this.Base.setMyData({ goodslist});
-    });
+    
     this.calc();
   }
   goodsSelect(e){

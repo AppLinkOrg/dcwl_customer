@@ -1,9 +1,9 @@
 <!--pages/route/route.wxml-->
 <map id="map" markers='{{markers}}' scale="15" latitude='{{mylocation.ad_info.location.lat}}' longitude='{{mylocation.ad_info.location.lng}}' show-location style="width: 100vw; height: 100vh;" polyline='{{polyline}}'>
 
-  <cover-view class='fixedbottom '>
+  <cover-view style='margin-top:55vh;' >
     <cover-view class='box-shadow routerbox padding-20'>
-      <cover-view wx:if="{{route[0]!=null&&route[1]!=null}}" class='padding-20 h6 text-right txt-gray'>行程大约{{distance}}，需要{{duration}}
+      <cover-view wx:if="{{route[0]!=null&&route[1]!=null}}" class='padding-20 h6 text-right txt-gray'>行程大约{{distance}}，大约需要{{duration}}
       </cover-view>
       <block wx:for="{{route}}" wx:key="key" wx:for-index="idx">
         <cover-view class='flex-row flex-center padding-20'>
@@ -31,13 +31,13 @@
           <cover-view class='flex-1 txt-gray border-bottom'></cover-view>
         </cover-view>
       </block>
-      <cover-view wx:if="{{route[0]!=null&&route[1]!=null&&route.length<5}}" class='padding-20 h6 text-center txt-gray' bindtap='addAddress' id="{{idx}}">添加终点
-      </cover-view>
+      <!-- <cover-view wx:if="{{route[0]!=null&&route[1]!=null&&route.length<5}}" class='padding-20 h6 text-center txt-gray' bindtap='addAddress' id="{{idx}}">添加终点
+      </cover-view> -->
     </cover-view>
 
-    <cover-view class='btnConfirm' bindtap='confirm'>
+    <button class='btnConfirm'  bindtap='confirm' >
       确认路线
-    </cover-view>
+    </button>
 
   </cover-view>
 

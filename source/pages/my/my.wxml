@@ -11,6 +11,7 @@
 
 <view class='white-block block' style='margin-top:40rpx;'>
 <navigator url='../orderList/orderList'  class='item item-split txt-black'>我的订单</navigator>
+<navigator url='../count/count'  class='item item-split txt-black'>订单统计</navigator>
 <navigator url='../usageRecord/usageRecord'  class='item item-split txt-black'>物流公司</navigator>
 <navigator  class='item '><button open-type="contact" class='clear-button  '>联系客服</button></navigator>
 </view>

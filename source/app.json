@@ -15,7 +15,8 @@
     "pages/goodsselect/goodsselect",
     "pages/transportDetails/transportDetails",
     "pages/success/success",
-    "pages/usageRecord/usageRecord"
+    "pages/usageRecord/usageRecord",
+    "pages/count/count"
   ],
   "permission": {
     "scope.userLocation": {

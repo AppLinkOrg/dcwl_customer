@@ -1,4 +1,4 @@
-// pages/content/content.js
+// pages/route/route.js
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
@@ -11,9 +11,9 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    if(options.route==undefined){
+    if (options.route == undefined) {
       this.Base.setMyData({ route: [null, null] });
-    //this.Base.setMyData({route: [{ title: "电影大厦", location: { lat: 22.54478, lng: 114.1132 } }, {title: "宁水花园", location:{ lat: 22.5613, lng: 114.14539 } }] });
+      //this.Base.setMyData({route: [{ title: "电影大厦", location: { lat: 22.54478, lng: 114.1132 } }, {title: "宁水花园", location:{ lat: 22.5613, lng: 114.14539 } }] });
     } else {
       console.log("route");
       console.log(options.route);
@@ -23,32 +23,37 @@ class Content extends AppBase {
     }
   }
   onMyShow() {
+    wx.showLoading({
+      title: '数据加载中',
+      mask:true
+    })
     var that = this;
-    var mylocation=this.Base.getMyData().mylocation;
-    if(mylocation==undefined){
+    var mylocation = this.Base.getMyData().mylocation;
+    if (mylocation == undefined) {
       that.Base.getAddress((addressinfo) => {
         that.Base.setMyData({ mylocation: addressinfo });
       });
     }
 
     var route = this.Base.getMyData().route;
-    if(route[0]!=null&&route[1]!=null){
+    if (route[0] != null && route[1] != null) {
       this.makePloyline();
     }
+    wx.hideLoading();
   }
-  selectAddress(e){
+  selectAddress(e) {
 
     //this.makePloyline();
     //return;
-    var seq=e.currentTarget.id;
+    var seq = e.currentTarget.id;
     wx.navigateTo({
-      url: '/pages/addressselect/addressselect?callbackid='+seq,
+      url: '/pages/addressselect/addressselect?callbackid=' + seq,
     })
   }
-  dataReturnCallback(callbackid, data){
+  dataReturnCallback(callbackid, data) {
     console.log(callbackid);
-    var that=this;
-    var route=that.Base.getMyData().route;
+    var that = this;
+    var route = that.Base.getMyData().route;
     route[callbackid] = data;
     that.Base.setMyData({ route: route });
     that.makePloyline();
@@ -61,73 +66,77 @@ class Content extends AppBase {
     });
   }
   removeAddress(e) {
+    wx.showLoading({
+      title: '数据加载中',
+      mask: true
+    });
     var that = this;
     var seq = e.currentTarget.id;
     var route = that.Base.getMyData().route;
-    var nroute=[];
-    for(var i=0;i<route.length;i++){
-      if(i!=seq){
+    var nroute = [];
+    for (var i = 0; i < route.length; i++) {
+      if (i != seq) {
         nroute.push(route[i]);
       }
     }
     this.Base.setMyData({ route: nroute });
     that.makePloyline();
   }
-  makePloyline(){
+  makePloyline() {
     //http://apis.map.qq.com/ws/direction/v1/driving/?from=39.915285,116.403857&to=39.915285,116.803857&waypoints=39.111,116.112;39.112,116.113&output=json&
 
-    var that=this;
+    var that = this;
     var frompoint = "";
     var topoint = "";
     var waypoints = [];
     var route = that.Base.getMyData().route;
-    var markers=[];
-    for (var i = 0; i <route.length;i++){
-      if(route[i]!=null){
+    var markers = [];
+    for (var i = 0; i < route.length; i++) {
+      if (route[i] != null) {
         if (i == 0) {
           frompoint = route[i].location.lat + "," + route[i].location.lng;
-        } else if (i == (route.length-1)) {
+        } else if (i == (route.length - 1)) {
           topoint = route[i].location.lat + "," + route[i].location.lng;
-        }else{
+        } else {
           waypoints.push(route[i].location.lat + "," + route[i].location.lng);
         }
 
         markers.push({
-          iconPath: "/images/icons/"+(i+1).toString()+".png",
+          iconPath: "/images/icons/" + (i + 1).toString() + ".png",
           latitude: route[i].location.lat,
           longitude: route[i].location.lng,
           title: route[i].title,
-          width:20,
-          height:20
+          width: 20,
+          height: 20
         });
 
 
       }
     }
-    if(frompoint!=""&&topoint!=""){
+    if (frompoint != "" && topoint != "") {
 
-      var url = "https://apis.map.qq.com/ws/direction/v1/driving/?callback=cb&key="+AppBase.QQMAPKEY;
+      var url = "https://apis.map.qq.com/ws/direction/v1/driving/?callback=cb&key=" + AppBase.QQMAPKEY;
       url += "&from=" + frompoint;
       url += "&to=" + topoint;
-      if(waypoints.length>0){
+      if (waypoints.length > 0) {
         url += "&waypoints=" + waypoints.join(";");
       }
       wx.request({
         url: url,
-        success(e){
+        success(e) {
           console.log(e);
-          if(e.data.status==0){
-            var data=e.data.result;
+          if (e.data.status == 0) {
+            var data = e.data.result;
             var distance = data.routes[0].distance;
             var duration = data.routes[0].duration;
 
-            if (distance>=1000){
-              distance = (distance/1000).toFixed(1)+"公里";
-            }else{
+            if (distance >= 1000) {
+              distance = (distance / 1000).toFixed(1) + "公里";
+            } else {
               distance = distance + "米";
             }
             if (duration >= 60) {
-              duration = (duration / 60).toFixed(0) + "小时" + (duration%60).toString()+"分钟";
+              duration = (duration / 60).toFixed(0) + "小时" + (duration % 60).toString() + "分钟";
             } else {
               duration = duration + "分钟";
             }
@@ -135,14 +144,13 @@ class Content extends AppBase {
 
 
             var polyline = data.routes[0].polyline;//[{latitude: 0, longitude: 0}]
-            var points = [{ latitude: polyline[0], longitude: polyline[1]}];
-            for (var i = 2; i < polyline.length; i=i+2)
-            {
+            var points = [{ latitude: polyline[0], longitude: polyline[1] }];
+            for (var i = 2; i < polyline.length; i = i + 2) {
               //console.log(i);
               polyline[i] = polyline[i - 2] + polyline[i] / 1000000;
-              polyline[i + 1] = polyline[i+1 - 2] + polyline[i+1] / 1000000;
+              polyline[i + 1] = polyline[i + 1 - 2] + polyline[i + 1] / 1000000;
               points.push({ latitude: polyline[i], longitude: polyline[i + 1] });
-             }
+            }
 
             //for (var i = 0; i < data.routes.length;i++){
             //  for (var j = 0; j < data.routes[i].polyline.length;j++){
@@ -155,16 +163,19 @@ class Content extends AppBase {
                 color: "#F04848",
                 width: 4
               }],
-              markers: markers, distance: distance, duration: duration});
+              markers: markers, distance: distance, duration: duration
+            });
           }
         }
       })
     }
-
+    wx.hideLoading();
   }
-  confirm(e){
-    var data=this.Base.getMyData();
-    if(data.route[0]==null){
+  confirm(e) {
+    var data = this.Base.getMyData();
+    var duration = this.Base.getMyData().duration;
+    var distance=this.Base.getMyData().distance;
+    if (data.route[0] == null) {
       this.Base.info("请选择起点");
       return;
     }
@@ -172,9 +183,13 @@ class Content extends AppBase {
       this.Base.info("请选择终点");
       return;
     }
-    var ret={
+    if (duration == null || distance==null) {
+      this.Base.info("正在计算时间和距离...");
+      return;
+    }
+    var ret = {
       route: data.route,
-      distance: data.distance, 
+      distance: data.distance,
       duration: data.duration
     };
     this.dataReturn(ret);
@@ -182,12 +197,12 @@ class Content extends AppBase {
 }
 var content = new Content();
 var body = content.generateBodyJson();
-body.onLoad = content.onLoad; 
+body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
-body.selectAddress = content.selectAddress; 
+body.selectAddress = content.selectAddress;
 body.dataReturnCallback = content.dataReturnCallback;
-body.addAddress = content.addAddress; 
-body.removeAddress = content.removeAddress; 
+body.addAddress = content.addAddress;
+body.removeAddress = content.removeAddress;
 body.makePloyline = content.makePloyline;
 body.confirm = content.confirm;
 Page(body)
