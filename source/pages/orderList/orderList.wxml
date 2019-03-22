@@ -42,24 +42,25 @@
         <!-- </view> -->
       </view>
 
-      <view class='flex-row'>
-        <image src='{{uploadpath}}resource/driver.png' class='icon-30 margin-10 margin-left'></image>
+      <view wx:for="{{item.dispatch}}" wx:for-index='i'>
 
-        <view class='margin-10 f-32 txt-black'>司机：{{item.driver_name}}</view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/driver.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black' wx:if="{{item.name}}">司机 {{i+1}}：{{item.name}}</view>
+          <view class='margin-10 f-32 txt-red' wx:else>司机：正在安排司机接单</view>
+        </view>
 
-      </view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/phone.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black'>联系电话：{{item.mobile}}</view>
+        </view>
 
-      <view class='flex-row'>
-        <image src='{{uploadpath}}resource/id-card.png' class='icon-30 margin-10 margin-left'></image>
+       
 
-        <view class='margin-10 f-32 txt-black'>身份证号码：{{item.driver_idcard}}</view>
-
-      </view>
-
-      <view class='flex-row'>
-        <image src='{{uploadpath}}resource/palte.png' class='icon-30 margin-10 margin-left'></image>
-
-        <view class='margin-10 f-32 txt-black'>车牌：{{item.vehicle_plate_number}}</view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/palte.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black'>车牌：{{item.plate_number}}</view>
+        </view>
 
       </view>
 

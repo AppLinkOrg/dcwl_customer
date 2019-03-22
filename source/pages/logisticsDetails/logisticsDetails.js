@@ -30,9 +30,13 @@ class Content extends AppBase {
 
   }
 
-  copy(){
+  copy(e){
     var that=this;
-    var data = '司机:' + that.Base.getMyData().info.driver_id_name + '\n' + '联系方式:' + that.Base.getMyData().info.driver_mobile + '\n' + '身份证:' + that.Base.getMyData().info.driver_idcard + '\n' +'车辆:'+ that.Base.getMyData().info.vehicle_plate_number
+    var data = '';
+    var dispatch = e.target.dataset.dispatch;
+    for (var i = 0; i < dispatch.length; i++) {
+      data = data + '司机:' + dispatch[i].name + '\n' + '联系方式:' + dispatch[i].mobile + '\n' + '身份证:' + dispatch[i].idcard + '\n' + '车辆:' + dispatch[i].plate_number + '\n \n'
+    }
     wx.setClipboardData({
       data: data,
       success(res) {

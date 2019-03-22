@@ -39,34 +39,34 @@
 
     </view>
 
-    <view class='flex-row'>
-      <image src='{{uploadpath}}resource/driver.png' class='icon-30 margin-10 margin-left'></image>
+    <view wx:for="{{info.dispatch}}" wx:for-index='i'>
 
-      <view class='margin-10 f-32 txt-black' wx:if='{{info.driver_name}}'>司机：{{info.driver_name}}</view>
-      <view class='margin-10 f-32 txt-primary' wx:else>司机：正在安排司机取货</view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/driver.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black' wx:if="{{item.name}}">司机 {{i+1}}：{{item.name}}</view>
+          <view class='margin-10 f-32 txt-red' wx:else>司机：正在安排司机接单</view>
+        </view>
 
-    </view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/phone.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black'>联系电话：{{item.mobile}}</view>
+        </view>
 
-    <view class='flex-row'>
-      <image src='{{uploadpath}}resource/id-card.png' class='icon-30 margin-10 margin-left'></image>
-      <view class='margin-10 f-32 txt-black'>司机联系方式：{{info.driver_mobile}}</view>
-    </view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/id-card.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black'>身份证号码：{{item.idcard}}</view>
+        </view>
 
-    <view class='flex-row'>
-      <image src='{{uploadpath}}resource/id-card.png' class='icon-30 margin-10 margin-left'></image>
-      <view class='margin-10 f-32 txt-black'>身份证号码：{{info.driver_idcard}}</view>
-    </view>
+        <view class='flex-row'>
+          <image src='{{uploadpath}}resource/palte.png' class='icon-30 margin-10 margin-left'></image>
+          <view class='margin-10 f-32 txt-black'>车牌：{{item.plate_number}}</view>
+        </view>
 
-    <view class='flex-row'>
-      <image src='{{uploadpath}}resource/palte.png' class='icon-30 margin-10 margin-left'></image>
-
-      <view class='margin-10 f-32 txt-black'>车牌：{{info.vehicle_plate_number}}</view>
-
-    </view>
+      </view>
 
     <view class='flex-center flex-row margin-bottom-40'>
       <view class="flex-1"></view>
-      <button class='bg-blue txt-white text-center margin-20 margin-top-60 f-36' bindtap='copy' style='width: 420rpx;'>一键复制订单信息</button>
+      <button class='bg-blue txt-white text-center margin-20 margin-top-60 f-36' data-dispatch='{{info.dispatch}}' bindtap='copy' style='width: 420rpx;'>一键复制订单信息</button>
       <view class="flex-1"></view>
     </view>
 

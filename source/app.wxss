@@ -76,6 +76,9 @@ view, navigator, input, text, textarea {
 .bg-primary {
   background: #f04848;
 }
+.txt-red{
+  color: #f04848;
+}
 
 .txt-primary {
   color: #f04848;
