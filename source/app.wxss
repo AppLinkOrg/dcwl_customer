@@ -623,6 +623,14 @@ button[disabled][type=primary] {
   padding-top: 50rpx;
 }
 
+.padding-bottom-20 {
+  padding-bottom: 20rpx;
+}
+
+.padding-bottom-30 {
+  padding-bottom: 30rpx;
+}
+
 .margin-10 {
   margin: 10rpx;
 }

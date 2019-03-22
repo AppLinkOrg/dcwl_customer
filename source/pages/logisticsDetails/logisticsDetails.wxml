@@ -12,23 +12,31 @@
     <view class='flex-row padding-top-20'>
       <image src='{{uploadpath}}resource/dot.png' class='icon-20 margin-10 margin-left'></image>
       <view>
-        <view class='margin-10 f-32 txt-black'>装货地址：{{info.s_address_details}}</view>
+        <view class='margin-10 f-32 txt-black' style='width:580rpx;'>装货地址：{{info.s_address_details}}</view>
       </view>
     </view>
 
     <view class='flex-row'>
       <image src='{{uploadpath}}resource/dot-yellow.png' class='icon-20 margin-10 margin-left'></image>
       <view>
-        <view class='margin-10 f-32 txt-black'>卸货地址：{{info.e_address_details}}</view>
+        <view class='margin-10 f-32 txt-black' style='width:580rpx;'>卸货地址：{{info.e_address_details}}</view>
       </view>
     </view>
 
     <view class='flex-row'>
       <image src='{{uploadpath}}resource/cargo.png' class='icon-30 margin-10 margin-left'></image>
-      <view class='flex-row'>
-        <view class='margin-10 f-32 txt-black' style='width: 230rpx;'>货物：{{info.goodsstr}}</view>
-        <view class='margin-10 f-32 txt-black'>重量：{{info.weight}}</view>
-      </view>
+
+      <view class='margin-10 f-32 txt-black' >货物：{{info.goodsstr}}</view>
+
+
+    </view>
+
+    <view class='flex-row'>
+      <image src='{{uploadpath}}resource/cargo.png' class='icon-30 margin-10 margin-left'></image>
+
+
+      <view class='margin-10 f-32 txt-black'>重量：{{info.weight}}</view>
+
     </view>
 
     <view class='flex-row'>

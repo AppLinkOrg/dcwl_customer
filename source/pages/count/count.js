@@ -23,7 +23,7 @@ class Content extends AppBase {
     memberApi.info({},(res)=>{
 
       var vorderApi = new VorderApi();
-      vorderApi.list1({ mobile: '15077545371'}, (res) => {
+      vorderApi.list1({ mobile: res.mobile}, (res) => {
         console.log(res)
         that.Base.setMyData({ list: res });
       })

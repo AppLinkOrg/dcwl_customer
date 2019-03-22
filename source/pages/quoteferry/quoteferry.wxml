@@ -51,24 +51,24 @@
             </view>
           </view>
         </view>
-        
+
         <view class='padding-20 '>
           <view class='flex-row flex-center padding-20 border-bottom' style='padding-top:0rpx;'>
             <view>
               <image class='icon' src='{{uploadpath}}resource/calendar.png'></image>
             </view>
             <view class='flex-1 txt-gray h6' style='margin-left:10rpx;margin-right:10rpx;'>
-            <picker mode="date" bindchange="changeDate" value="{{date}}" start="{{startdate}}" end="{{enddate}}"  >
-            <block  wx:if="{{date==undefined}}">取货时间</block>
-            <block  wx:if="{{date!=undefined}}">{{date}}</block>
-            </picker>
+              <picker mode="date" bindchange="changeDate" value="{{date}}" start="{{startdate}}" end="{{enddate}}">
+                <block wx:if="{{date==undefined}}">取货时间</block>
+                <block wx:if="{{date!=undefined}}">{{date}}</block>
+              </picker>
             </view>
             <view>
               <image class='icon' src='{{uploadpath}}resource/right.png'></image>
             </view>
           </view>
         </view>
-        
+
         <view class='padding-20 ' bindtap='openGoods'>
 
           <view class='flex-row flex-center padding-20 border-bottom' style='padding-top:0rpx;'>
@@ -105,9 +105,15 @@
             <view>
               <image class='icon' src='{{uploadpath}}resource/phone2.png'></image>
             </view>
-            <view class='flex-1' style='margin-left:10rpx;margin-right:10rpx;'>
-              <input class='h6' style='width:100%' auto-height='{{true}}' placeholder='手机号码' maxlength='11' placeholder-style='color:#aaa' value='{{mobile}}'></input>
+            <view class='flex-1' style='margin-left:10rpx;margin-right:10rpx;' wx:if="{{memberinfo.userrole_id==2}}">
+              <input class='h6' style='width:100%' auto-height='{{true}}' type='number' placeholder='手机号码' maxlength='11' placeholder-style='color:#aaa' value='{{mobile}}'></input>
             </view>
+
+            <view class='flex-1' style='margin-left:10rpx;margin-right:10rpx;' wx:else>
+              <view class='h6' style='width:100%;'>{{mobile}}</view>
+              <!-- <input class='h6' style='width:100%' auto-height='{{true}}' placeholder='手机号码' maxlength='11' placeholder-style='color:#aaa' value='{{mobile}}'></input> -->
+            </view>
+
             <view>
               <button class='h6' size='mini' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNo'>获取</button>
             </view>
@@ -127,9 +133,9 @@
         </view>
       </view>
       <view>
-      <form bindsubmit="confirmQuote" bindreset="formReset" report-submit="{{true}}">
-        <button type='primary' class='margin-top' form-type='submit' wx:if="{{id==undefined}}" >马上获取报价</button>
-        <button type='primary' class='margin-top' form-type='submit' wx:if="{{id!=undefined}}" >处理中，重新提交</button>
+        <form bindsubmit="confirmQuote" bindreset="formReset" report-submit="{{true}}">
+          <button type='primary' class='margin-top' form-type='submit' wx:if="{{id==undefined}}">马上获取报价</button>
+          <button type='primary' class='margin-top' form-type='submit' wx:if="{{id!=undefined}}">处理中，重新提交</button>
         </form>
       </view>
       <view class='text-center margin-top-10 h6'>

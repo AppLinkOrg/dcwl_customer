@@ -13,7 +13,7 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
     if (options.goods == undefined) {
-      this.Base.setMyData({ goods: [] });
+      this.Base.setMyData({ goods: [], inst_id: options.inst_id  });
     } else {
       this.Base.setMyData({ goods: JSON.parse(options.goods), inst_id: options.inst_id });
     }

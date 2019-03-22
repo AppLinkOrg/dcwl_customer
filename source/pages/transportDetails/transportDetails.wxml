@@ -10,8 +10,8 @@
       <view class='flex-row padding-top-20'>
         <image src='{{uploadpath}}resource/qu.png' class='icon-30 margin-10 margin-left'></image>
         <view>
-          <view class='margin-10 f-36 flex-1' style='color: #000;'>{{info.start_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.s_address_details}}</view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;width:580rpx;'>{{info.start_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;width:580rpx;' >{{info.s_address_details}}</view>
         </view>
 
       </view>
@@ -19,8 +19,8 @@
       <view class='flex-row'>
         <image src='{{uploadpath}}resource/song.png' class='icon-30 margin-10 margin-left'></image>
         <view>
-          <view class='margin-10 f-36 flex-1' style='color: #000;'>{{info.end_address}}</view>
-          <view class='margin-10 flex-1' style='color: #858A96;'>{{info.e_address_details}}</view>
+          <view class='margin-10 f-36 flex-1' style='color: #000;width:580rpx;'>{{info.end_address}}</view>
+          <view class='margin-10 flex-1' style='color: #858A96;width:580rpx;' >{{info.e_address_details}}</view>
         </view>
 
       </view>
@@ -37,17 +37,17 @@
             <view class='txt-black f-32' style='width: 180rpx;'>接单时间：</view>{{info.receipt_time}}</view>
           <view class='margin-10 txt-black f-32 flex-row height-70'>
             <view class='txt-black f-32' style='width: 180rpx;'>取货时间：</view>{{info.pickupgoods_time}}</view>
-          <view class='margin-10 flex-row'>
+          <view class='margin-10 flex-row '>
             <view class='txt-black f-32' style='width: 180rpx;'>取货凭证：</view>
-            <image src='{{uploadpath}}photo/{{info.pickupgoods_img}}' class='voucher_img' bindtap='viewPhoto' id='{{}}'></image>
+            <image src='{{uploadpath}}photo/{{info.pickupgoods_img}}' class='voucher_img' bindtap='photo' id='{{}}'></image>
           </view>
 
           <view wx:if="{{ctt==3}}">
             <view class='margin-10 txt-black f-32 flex-row height-50'>
               <view class='txt-black f-32' style='width: 180rpx;'>送达时间：</view>{{info.order_end_time}}</view>
-            <view class='margin-10 flex-row'>
+            <view class='margin-10 flex-row '>
               <view class='txt-black f-32' style='width: 180rpx;'>送达凭证：</view>
-              <image src='{{uploadpath}}photo/{{info.receipt_img}}' class='voucher_img' bindtap='viewPhoto' id='{{uploadpath}}photo/{{info.pickupgoods_img}}'></image>
+              <image src='{{uploadpath}}photo/{{info.receipt_img}}' class='voucher_img' bindtap='photo' id='{{uploadpath}}photo/{{info.pickupgoods_img}}'></image>
             </view>
           </view>
         </view>

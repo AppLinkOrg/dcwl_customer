@@ -28,9 +28,19 @@ class Content extends AppBase {
     var memberApi = new MemberApi();
     memberApi.info({}, (ret) => {
       that.Base.setMyData({ mobile: ret.mobile });
+      if (that.Base.getMyData().month){
+        var data={
+          mobile: ret.mobile, 
+          submit_time: that.Base.getMyData().month
+        }
+      }else{
+        data={
+          mobile: ret.mobile
+        }
+      }
 
       var quoteferryapi = new QuoteferryApi();
-      quoteferryapi.list({ mobile: ret.mobile, submit_time: that.Base.getMyData().month }, (ret) => {
+      quoteferryapi.list(data, (ret) => {
         console.log(ret)
         this.Base.setMyData({ list: ret });
       });

@@ -79,6 +79,7 @@ class Content extends AppBase {
     }
   }
   openGoods(){
+    // console.log(this.Base.getMyData().inst_id)
     var goods = this.Base.getMyData().goods;
     if (goods != undefined) {
       wx.navigateTo({
@@ -87,7 +88,7 @@ class Content extends AppBase {
     } else {
 
       wx.navigateTo({
-        url: '/pages/goodsselect/goodsselect?callbackid=goods',
+        url: '/pages/goodsselect/goodsselect?callbackid=goods&inst_id=' + this.Base.getMyData().inst_id,
       })
     }
   }
@@ -127,7 +128,7 @@ class Content extends AppBase {
       route: JSON.stringify(data.route),
       distance: data.distance,
       duration: data.duration,
-      pickupgoods_time: data.date,
+      user_pickupgoods_time: data.date,
       goods: JSON.stringify(data.goods),
       weight: data.weight,
       remark: data.remark,
