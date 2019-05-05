@@ -23,9 +23,10 @@ class Content extends AppBase {
     instapi.info({}, (info) => {
       that.Base.setMyData(info);
     });
-
+    var mobile = AppBase.UserInfo.mobile;
+    var name = AppBase.UserInfo.name;
     var memberApi = new MemberApi(); 
-    memberApi.info({}, (ret) => {
+    memberApi.info({ mobile: mobile, name: name}, (ret) => {
       // that.Base.setMyData({ mobile: ret.mobile });
       var usagerecordApi = new UsagerecordApi();
       usagerecordApi.list({ mobile: ret.mobile }, (list) => {
