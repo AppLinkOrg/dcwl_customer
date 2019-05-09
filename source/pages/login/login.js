@@ -22,6 +22,7 @@ class Content extends AppBase {
     this.Base.needauth = false;
     super.onLoad(options);
   }
+  
   onMyShow() {
     var that = this;
   }

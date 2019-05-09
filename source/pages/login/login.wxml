@@ -7,7 +7,7 @@
     </view>
     
     <view class='flex-row column '>
-      <view class='txt-black margin-left-10'>欢迎.请登录</view>
+      <!-- <view class='txt-black margin-left-10'>欢迎.请登录</view> -->
 
       <view class='flex-row flex-center margin-top'>
         <view class=''>

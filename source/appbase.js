@@ -30,9 +30,9 @@ export class AppBase {
     //ApiConfig.SetToken("10e991a4ca7a93c60794628c11edaea3");
   }
   setPageTitle(instinfo) {
-    // wx.setNavigationBarTitle({
-    //   title: instinfo.name,
-    // })
+    wx.setNavigationBarTitle({
+      title: instinfo.name,
+    })
   }
   generateBodyJson() {
     var base = this;
