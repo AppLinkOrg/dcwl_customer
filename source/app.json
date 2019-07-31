@@ -54,5 +54,6 @@
         "selectedIconPath": "images/icons/personal-blue.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
