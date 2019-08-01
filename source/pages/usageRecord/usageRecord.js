@@ -25,19 +25,16 @@ class Content extends AppBase {
     });
     var mobile = AppBase.UserInfo.mobile;
     var name = AppBase.UserInfo.name;
-    var memberApi = new MemberApi(); 
-    memberApi.info({ mobile: mobile, name: name}, (ret) => {
+    var memberApi = new MemberApi();
+    var memberinfo = this.Base.getMyData().memberinfo;
+   // memberApi.info({ mobile: mobile, name: name}, (ret) => {
       // that.Base.setMyData({ mobile: ret.mobile });
       var usagerecordApi = new UsagerecordApi();
-      usagerecordApi.list({ mobile: ret.mobile }, (list) => {
+    usagerecordApi.list({ mobile: memberinfo.mobile }, (list) => {
         console.log(list)
         that.Base.setMyData({ list });
       });
-    })
-
-    
-  
-
+    //})
 
   }
 }

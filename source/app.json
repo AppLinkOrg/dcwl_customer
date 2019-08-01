@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/quoteferry/quoteferry",
     "pages/auth/auth",
     "pages/login/login",
     "pages/logistics/logistics",
@@ -9,7 +10,7 @@
     "pages/inquiryPrice/inquiryPrice",
     "pages/my/my",
     "pages/orderList/orderList",
-    "pages/quoteferry/quoteferry",
+    
     "pages/route/route",
     "pages/addressselect/addressselect",
     "pages/goodsselect/goodsselect",

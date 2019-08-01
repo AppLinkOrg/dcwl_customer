@@ -29,14 +29,15 @@ class Content extends AppBase {
     });
 
     var memberApi = new MemberApi();
-    memberApi.info({},(ret)=>{
-      that.Base.setMyData({ mobile: ret.mobile });
-    })
+    // memberApi.info({},(ret)=>{
+    //   that.Base.setMyData({ mobile: ret.mobile });
+    // })
+    var memberinfo = this.Base.getMyData().memberinfo;
     var quoteferryapi = new QuoteferryApi();
-    quoteferryapi.list({ status: 2, mobile: that.Base.getMyData().mobile }, (ret) => {
+    quoteferryapi.list({ status: 2, mobile: memberinfo.mobile }, (ret) => {
       this.Base.setMyData({ list_2: ret });
     });
-    quoteferryapi.list({ status: 1, mobile: that.Base.getMyData().mobile }, (ret) => {
+    quoteferryapi.list({ status: 1, mobile: memberinfo.mobile }, (ret) => {
       this.Base.setMyData({ list_1: ret });
     });
   }

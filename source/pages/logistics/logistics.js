@@ -32,20 +32,38 @@ class Content extends AppBase {
     });
 
     var memberApi = new MemberApi();
-    memberApi.info({}, (ret) => {
+
+    var memberinfo = this.Base.getMyData().memberinfo;
+
+    if (memberinfo.mobile == "" || memberinfo.mobile == undefined) {
+      wx.showModal({
+        title: '提示',
+        content: '您暂未获取手机号无法查看运输单,请前往个人中心获取',
+        showCancel: false,
+        cancelText: '取消',
+        cancelColor: '#EE2222',
+        confirmText: '确定',
+        confirmColor: '#e73339',
+        success: function (res) {
+          if (res.confirm) {
+          }
+        }
+      });
+    }
+    //memberApi.info({}, (ret) => {
       // that.Base.setMyData({ mobile: ret.mobile });
 
       var quoteferryapi = new QuoteferryApi();
-      quoteferryapi.list({ status: '3,4,5', mobile: ret.mobile }, (ret) => {
+    quoteferryapi.list({ status: '3,4,5', mobile: memberinfo.mobile }, (ret) => {
         this.Base.setMyData({ list_4: ret });
       });
-      quoteferryapi.list({ status: 6, mobile: ret.mobile }, (ret) => {
+    quoteferryapi.list({ status: 6, mobile: memberinfo.mobile }, (ret) => {
         this.Base.setMyData({ list_6: ret });
       });
-      quoteferryapi.list({ status: 7, mobile: ret.mobile }, (ret) => {
+    quoteferryapi.list({ status: 7, mobile: memberinfo.mobile }, (ret) => {
         this.Base.setMyData({ list_7: ret });
       });
-    })
+   // })
 
     
 

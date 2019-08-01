@@ -26,16 +26,17 @@ class Content extends AppBase {
     // })
     var that = this;
     var memberApi = new MemberApi();
-    memberApi.info({}, (ret) => {
-      that.Base.setMyData({ mobile: ret.mobile });
+    var memberinfo = this.Base.getMyData().memberinfo;
+  //  memberApi.info({}, (ret) => {
+    that.Base.setMyData({ mobile: memberinfo.mobile });
       if (that.Base.getMyData().month){
         var data={
-          mobile: ret.mobile, 
+          mobile: memberinfo.mobile, 
           submit_time: that.Base.getMyData().month
         }
       }else{
         data={
-          mobile: ret.mobile
+          mobile: memberinfo.mobile
         }
       }
 
@@ -44,7 +45,7 @@ class Content extends AppBase {
         console.log(ret)
         this.Base.setMyData({ list: ret });
       });
-    })
+    //})
 
     
 

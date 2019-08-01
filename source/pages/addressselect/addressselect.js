@@ -82,7 +82,6 @@ class Content extends AppBase {
       }
     });
 
-
   }
   searchKeyword(e) {
     var val = e.currentTarget.id;

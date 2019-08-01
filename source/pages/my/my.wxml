@@ -1,24 +1,25 @@
-<view class='text-center memberinfo'>
-<view>
-      <image class='avatar' src='{{uploadpath}}inst/{{logobackimg}}'></image>
-    </view>
-    <view class='nickname'>
-      {{memberinfo.name}},欢迎使用
-    </view>
+<view class='text-center memberinfo  flex-row flex-column'>
+
+  <image class='avatar' src='{{uploadpath}}inst/{{logobackimg}}'></image>
+
+  <view class='nickname'>
+    {{memberinfo.nickName}},欢迎使用
+  </view>
+
+  <view class=' flex-row flex-center margin-top-20' style=' position:relative'>
+    <button wx:if='{{memberinfo.mobile==""}}' hover-class="clear-button2" class=' button clear-button  ' style=" " open-type="getPhoneNumber" bindgetphonenumber="getPhoneNo"></button>
+    <view class="txt-white">{{memberinfo.mobile!=""?memberinfo.mobile:'点此获取手机号码'}}</view>
+
+  </view>
 </view>
 
 
 
 <view class='white-block block' style='margin-top:40rpx;'>
-<navigator url='../orderList/orderList'  class='item item-split txt-black'>我的订单</navigator>
-<navigator url='../count/count'  class='item item-split txt-black'>订单统计</navigator>
-<navigator url='../usageRecord/usageRecord'  class='item item-split txt-black'>物流公司</navigator>
-<navigator  class='item '><button open-type="contact" class='clear-button  '>联系客服</button></navigator>
+  <navigator url='../orderList/orderList' class='item item-split txt-black'>我的订单</navigator>
+  <navigator url='../count/count' class='item item-split txt-black'>订单统计</navigator>
+  <navigator url='../usageRecord/usageRecord' class='item item-split txt-black'>物流公司</navigator>
+  <navigator class='item '>
+    <button open-type="contact" class='clear-button  '>联系客服</button>
+  </navigator>
 </view>
-
-
-
-
-
-
-

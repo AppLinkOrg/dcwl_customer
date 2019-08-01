@@ -67,3 +67,9 @@
   width: 340rpx;
   height: 250rpx;
 }
+.button{
+  position: absolute;
+  z-index: 10;
+  width: 256rpx;
+  height:30rpx;
+}
